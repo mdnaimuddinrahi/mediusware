@@ -10,4 +10,18 @@ class Variant extends Model
         'title', 'description'
     ];
 
+    public function getVariant()
+    {
+        $variants = $this->with('variant')->get();
+        $vdata = array();
+        foreach ($variants as $vdata) {
+            $vdata['variantData'] = $vdata->variant->unique('variant');
+        }
+        return $variants;
+    }
+
+    public function variant()
+    {
+        return $this->hasMany(ProductVariant::class);
+    }
 }

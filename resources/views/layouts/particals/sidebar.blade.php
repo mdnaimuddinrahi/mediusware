@@ -30,8 +30,7 @@
             <i class="fas fa-fw fa-cog"></i>
             <span>Hotel</span>
         </a>
-        <div id="hotel" class="collapse" aria-labelledby="headingTwo"
-             data-parent="#accordionSidebar">
+        <div id="hotel" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Settings:</h6>
                 <a class="collapse-item" href="#">Season</a>
@@ -47,14 +46,10 @@
             <i class="fas fa-fw fa-cog"></i>
             <span>Product</span>
         </a>
-        <div id="product"
-             class="collapse {{ Request::is('product/*') || Request::is('product') || Request::is('product-variant') || Request::is('product-variant/*') ? 'show' : '' }}"
-             aria-labelledby="headingTwo"
-             data-parent="#accordionSidebar">
+        <div id="product" class="collapse {{ Request::is('product/*') || Request::is('product') || Request::is('product-variant') || Request::is('product-variant/*') ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Product Option:</h6>
-                <a class="collapse-item {{ url()->current() == route('product-variant.index') ? 'active' : '' }}"
-                   href="{{ route('product-variant.index') }}">Variant</a>
+                <a class="collapse-item {{ url()->current() == route('product-variant.index') ? 'active' : '' }}" href="{{ route('product-variant.index') }}">Variant</a>
                 <h6 class="collapse-header">Custom Components:</h6>
                 <a class="collapse-item {{ url()->current() == route('product.create') ? 'active' : '' }}" href="{{ route('product.create') }}">Create
                     Product</a>
@@ -70,8 +65,7 @@
             <i class="fas fa-fw fa-cog"></i>
             <span>Blog</span>
         </a>
-        <div id="blog" class="collapse {{ Request::is('blog/*') ||  Request::is('blog') ? 'show' : '' }}" aria-labelledby="headingTwo"
-             data-parent="#accordionSidebar">
+        <div id="blog" class="collapse {{ Request::is('blog/*') ||  Request::is('blog') ? 'show' : '' }}" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">blog options:</h6>
                 <a class="collapse-item {{ url()->current() == route('blog.create') ? 'active' : '' }}" href="{{ route('blog.create') }}">Blog

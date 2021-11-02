@@ -15,7 +15,12 @@ class VariantController extends Controller
      */
     public function index()
     {
+        if (request()->ajax()) {
+            $variants = (new Variant)->getVariant();
+            return response()->json($variants);
+        }
         $variants = Variant::paginate(10);
+        dd($variants);
         return view('products.variant.index', compact('variants'));
     }
 

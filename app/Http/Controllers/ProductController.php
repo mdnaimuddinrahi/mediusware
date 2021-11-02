@@ -10,14 +10,23 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct(Variant $variant)
+    {
+        $this->variant = $variant;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('products.index');
+
+        $products = (new Product)->getPost($request);
+
+        $variants = $this->variant->getVariant();
+        // dd($variants);
+        return view('products.index', compact('products', 'variants'));
     }
 
     /**
@@ -39,7 +48,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
     }
 
 
@@ -51,7 +59,6 @@ class ProductController extends Controller
      */
     public function show($product)
     {
-
     }
 
     /**
